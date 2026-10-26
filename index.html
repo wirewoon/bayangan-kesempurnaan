@@ -1234,14 +1234,14 @@ const sbCard = s => `
   </figure>`;
 let sbShown = 24;
 function renderSB(){
-  $("#sbGrid").innerHTML = SB2.slice(0, sbShown).map(s => sbCard({
-    sc: s.sc,
-    img: s.img,
-    shot: s.shot,
-    angle: s.angle,
-    move: s.move,
-    desc: s.desc,
-    hand: s.hand || ""
+  $("#sbGrid").innerHTML = SB2.slice(0, sbShown).map((s,i) => sbCard({
+    sc: `Scene ${String(i+1).padStart(2,"0")}`,
+    img: `sc${String(i+1).padStart(2,"0")}.jpg`,
+    shot: s[0] || "—",
+    angle: s[1] || "—",
+    move: s[2] || "—",
+    desc: s[3] || "Deskripsi scene belum tersedia.",
+    hand: ""
   })).join("");
   const more = $("#sbMore");
   more.hidden = sbShown >= SB2.length;
