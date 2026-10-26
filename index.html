@@ -1228,8 +1228,8 @@ const sbCard = s => `
   <figure class="sb rv in" style="margin:0">
     <div class="sb-hd"><b>${s.sc}</b><span>SHOT · ${s.shot}</span></div>
     <div class="sb-frame" data-label="${s.sc}">${s.img ? `<img src="${s.img}" alt="Sketsa storyboard ${s.sc}: ${esc(s.desc)}" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('missing-image')">` : ""}</div>
-    <div class="sb-meta"><div><span>Ukuran</span><b>${s.shot}</b></div><div><span>Angle</span><b>${s.angle}</b></div><div><span>Gerak</span><b>${s.move}</b></div></div>
-    <p>${s.desc}</p>
+    <div class="sb-meta"><div><span>Ukuran shot</span><b>${s.shot}</b></div><div><span>Angle kamera</span><b>${s.angle}</b></div><div><span>Gerak kamera</span><b>${s.move}</b></div></div>
+    <p class="sb-desc"><span class="sb-desc-label">Deskripsi scene</span>${s.desc}</p>
     ${s.hand?`<p class="hand">${s.hand}</p>`:""}
   </figure>`;
 let sbShown = 24;
